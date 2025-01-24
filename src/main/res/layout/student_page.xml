@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MADAssignment1.AppBarOverlay"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.MADAssignment1.PopupOverlay"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TableLayout
+        android:id="@+id/add_stud_table"
+        android:layout_width="347dp"
+        android:layout_height="418dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appbar">
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="@string/id"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/stud_id"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:autofillHints="0"
+                android:inputType="none"
+                android:labelFor="@id/stud_id" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:labelFor="@id/student_firstname"
+                android:padding="3dip"
+                android:gravity="center"
+                android:text="@string/first_name" />
+
+            <EditText
+                android:id="@+id/student_firstname"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:autofillHints="John"
+                android:inputType="text"
+                android:labelFor="@id/student_firstname"
+                android:minWidth="150dip"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/last_name" />
+
+            <EditText
+                android:id="@+id/student_lastname"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:autofillHints="Doe"
+                android:inputType="text"
+                android:minWidth="50dip" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/age" />
+
+            <EditText
+                android:id="@+id/student_age"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:inputType="number"
+
+                tools:ignore="SpeakableTextPresentCheck" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/gender" />
+
+            <Spinner
+                android:id="@+id/gender"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:autofillHints="Male"
+                android:minWidth="50dip" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/course_study" />
+
+            <EditText
+                android:id="@+id/student_course"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:autofillHints="Doe"
+                android:inputType="text"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+
+                android:gravity="center"
+                android:text="@string/student_address" />
+
+            <EditText
+                android:id="@+id/student_address"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:autofillHints="123 Fake Street"
+                android:inputType="textPostalAddress"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/student_add_button"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:text="@string/add"/>
+
+            <Button
+                android:id="@+id/student_delete_button"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:text="@string/view" />
+
+
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/confirm_response"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_stud_table" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="1dp">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MADAssignment1.AppBarOverlay"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.MADAssignment1.PopupOverlay"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TableLayout
+        android:id="@+id/add_task_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="10dp"
+        android:paddingTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appbar">
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/task_label"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:labelFor="@id/task_name"
+                android:text="@string/Task" />
+
+            <EditText
+                android:id="@+id/task_name"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:autofillHints="John"
+                android:inputType="text"
+                android:labelFor="@id/task_name"
+                android:minWidth="150dip"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:gravity="center"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="@string/task_location" />
+
+            <EditText
+                android:id="@+id/task_location"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:autofillHints="123 Fake Street"
+                android:inputType="textPostalAddress"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="@string/task_status" />
+
+            <Spinner
+                android:id="@+id/task_status"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:autofillHints="Incomplete"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/add_task"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:layout_marginStart="5dp"
+                android:padding="3dp"
+                android:text="@string/add" />
+
+            <Button
+                android:id="@+id/view_task"
+                style="?android:attr/buttonBarButtonStyle"
+
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:padding="3dp"
+                android:text="@string/view_all" />
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
